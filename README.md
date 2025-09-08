@@ -101,7 +101,7 @@ npx serve
 
 ### Modo Jogo em Andamento
 
-![Modo Contra IA](images\jogo-ativo.png)
+![Modo Contra IA](images/jogo-ativo.png)
 
 ---
 
