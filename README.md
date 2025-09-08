@@ -89,6 +89,12 @@ npx serve
 
 ---
 
+## Créditos
+
+Desenvolvido por [Rafaela Pereira Santos](https://github.com/devrafaela) • baseado no tutorial de *Felipe Rocha - Full Stack Club*.
+
+---
+
 ## 📸 Preview
 
 ### Menu Principal
