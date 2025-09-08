@@ -1,6 +1,6 @@
 # 🎮 Jogo da Velha 
 
-![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg) ![GitHub stars](https://img.shields.io/github/stars/seuusuario/jogo-da-velha?style=social)
+![Progresso](https://img.shields.io/badge/progress-50%25-yellow)
 
 Um **Jogo da Velha** simples e interativo, desenvolvido com **HTML, CSS e JavaScript**.
 
