@@ -1,9 +1,32 @@
 const cellElements = document.querySelectorAll("[data-cell]");
+const board = document.querySelector("[data-board]");
 
-let isCircleTurn = false;
+let isCircleTurn;
+
+const startGame = () => {
+  for (const cell of cellElements) {
+    cell.addEventListener("click", handleClick, {once: true});
+  }
+  isCircleTurn = false;
+
+  board.classList.add("x");
+}
 
 const placeMark = (cell, classToAdd) => {
   cell.classList.add(classToAdd);
+}
+
+const swapTurns = () => {
+  isCircleTurn = !isCircleTurn;
+
+  board.classList.remove("circle");
+  board.classList.remove("x");
+
+  if (isCircleTurn) {
+    board.classList.add("circle");
+  } else {
+    board.classList.add("x");
+  }
 }
 
 const handleClick = (e) => {
@@ -15,9 +38,9 @@ const handleClick = (e) => {
   
   // Verificar vitória
   // Verificar empate  
-  // Mudar simbolo
-};
 
-for (const cell of cellElements) {
-  cell.addEventListener("click", handleClick, {once: true});
+  // Mudar simbolo
+  swapTurns();
 }
+
+startGame();
