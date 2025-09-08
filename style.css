@@ -155,3 +155,7 @@ body {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.45);
   animation: blink 1s infinite;
 }
+
+.show-winning-message {
+  display: flex;
+} 
