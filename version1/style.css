@@ -1,0 +1,177 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(
+    90deg, 
+    rgb(87, 18, 197) 0%, 
+    rgb(60, 182, 226) 100%);
+}
+
+.board {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(3, auto);
+}
+
+.board.x .cell:not(.x):not(.circle):hover::after,
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.circle .cell:not(.x):not(.circle):hover::after,
+.board.circle .cell:not(.x):not(.circle):hover::before {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+/*Celula*/
+.cell {
+  width: 100px;
+  height: 100px;
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.cell.x, 
+.cell.circle {
+  cursor: not-allowed;
+}
+
+.cell:nth-child(1),
+.cell:nth-child(2),
+.cell:nth-child(3) {
+  border-top: none;
+}
+
+.cell:nth-child(1),
+.cell:nth-child(4),
+.cell:nth-child(7) {
+  border-left: none;
+}
+
+.cell:nth-child(3),
+.cell:nth-child(6),
+.cell:nth-child(9) {
+  border-right: none;
+}
+
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9) {
+  border-bottom: none;
+}
+
+/* X */
+.cell.x::before,
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::after,
+.board.x .cell:not(.x):not(.circle):hover::before {
+  content: "";
+  height: calc(100px * 0.15);
+  width: calc(100px * 0.9);
+  background: white;
+  position: absolute;
+}
+
+.cell.x::before,
+.board.x .cell:not(.x):not(.circle):hover::before {
+  transform: rotate(45deg);
+}
+
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::after {
+  transform: rotate(-45deg);
+}
+
+/* Circle */
+.cell.circle::before,
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::after,
+.board.circle .cell:not(.x):not(.circle):hover::before {
+  content: "";
+  height: calc(100px * 0.9);
+  width: calc(100px * 0.9);
+  background: white;
+  position: absolute;
+  border-radius: 50%;
+}
+
+/*Mensagem de Vitoria*/
+.winning-message {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.65);
+  flex-direction: column;
+}
+
+.winning-message-button {
+  font-family: Mulish,;
+  font-size: 1.8rem;
+  background-color: rgba(15, 158, 34, 1);
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+  margin-top: 16px;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.45);
+}
+
+.winning-message-button:hover {
+  background-color: white;
+  color: rgba(15, 158, 34, 1);
+}
+
+@keyframes blink {
+  0%, 50%, 100% {
+    color: white;
+  }
+  25%, 75% {
+    color: rgba(15, 158, 34, 1);
+  }
+}
+
+.winning-message-text {
+  color:white;
+  font-size: 3.5rem;;
+  font-family:'Times New Roman', Times, serif;
+  font-weight: 300;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.45);
+  animation: blink 1s infinite;
+}
+
+.show-winning-message {
+  display: flex;
+} 
+
+
+/* Voltar ao menu */
+.back-to-menu {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.2s ease;
+}
+
+.back-to-menu:hover {
+  text-decoration: underline;
+}
