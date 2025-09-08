@@ -28,6 +28,37 @@ body {
   grid-template-columns: repeat(3, auto);
 }
 
+/* Hover X/O nas células vazias */
+.board.x .cell:not(.x):not(.circle):hover::after,
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.circle .cell:not(.x):not(.circle):hover::after,
+.board.circle .cell:not(.x):not(.circle):hover::before {
+  content: "";
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Hover X */
+.board.x .cell:not(.x):not(.circle):hover::before {
+  width: calc(100px * 0.9);
+  height: calc(100px * 0.15);
+  transform: rotate(45deg);
+}
+
+.board.x .cell:not(.x):not(.circle):hover::after {
+  width: calc(100px * 0.9);
+  height: calc(100px * 0.15);
+  transform: rotate(-45deg);
+}
+
+/* Hover Circle */
+.board.circle .cell:not(.x):not(.circle):hover::before,
+.board.circle .cell:not(.x):not(.circle):hover::after {
+  width: calc(100px * 0.9);
+  height: calc(100px * 0.9);
+  border-radius: 50%;
+}
+
 /* Células */
 .cell {
   width: 100px;
@@ -82,7 +113,8 @@ body {
 
 .winning-message-text {
   color: white;
-  font-size: 3rem;
+  font-size: 3.5rem;
+  font-family: 'Times New Roman', Times, serif;
   font-weight: 300;
   text-shadow: 0 0 10px rgba(0,0,0,0.45);
   margin-bottom: 20px;
@@ -96,7 +128,7 @@ body {
 
 .winning-message-button {
   font-family: 'Mulish', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   background-color: rgba(15,158,34,1);
   padding: 10px 15px;
   cursor: pointer;
@@ -160,6 +192,7 @@ body {
   cursor: pointer;
   font-size: 1rem;
   transition: 0.2s ease;
+  z-index: 30;
 }
 
 .back-to-menu:hover {
