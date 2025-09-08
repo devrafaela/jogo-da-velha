@@ -1,31 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>Jogo da Velha</title>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Jogo da Velha - Contra IA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
 
-  </head>
-  <body>
-    <div class="board" data-board>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
-      <div class="cell" data-cell></div>
+  <!-- Modal de escolha de nível -->
+  <div class="level-modal" data-level-modal>
+    <h2>Escolha o Nível</h2>
+    <div class="level-buttons">
+      <button data-level="easy">Fácil</button>
+      <button data-level="medium">Médio</button>
+      <button data-level="hard">Difícil</button>
     </div>
+  </div>
 
-      <div class="winning-message" data-winning-message>
-        <p class="winning-message-text" data-winning-message-text>X Venceu!</p>
-        <button class="winning-message-button" data-restart-button>Reiniciar</button>
-      </div>
+  <!-- Tabuleiro -->
+  <div class="board" data-board>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+  </div>
 
-    <script src="./script.js"></script>
-  </body>
+  <!-- Mensagem de vitória -->
+  <div class="winning-message" data-winning-message>
+    <p class="winning-message-text" data-winning-message-text></p>
+    <div class="winning-buttons">
+      <button class="winning-message-button" data-restart-button>Reiniciar</button>
+      <button class="winning-message-button" data-change-level-button>Escolher Nível</button>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
 </html>
