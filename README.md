@@ -1,31 +1,41 @@
-# 🎮 Jogo da Velha 
+# 🎮 Jogo da Velha
 
-![Em andamento](https://img.shields.io/badge/Status-Em%20andamento-lightgrey)
+![Status](https://img.shields.io/badge/Status-Conclu%C3%ADdo-green)
 
-Um **Jogo da Velha** simples e interativo, desenvolvido com **HTML, CSS e JavaScript**.
+Um **Jogo da Velha** interativo, desenvolvido com **HTML, CSS e JavaScript**, que oferece duas modalidades de jogo: **2 Jogadores** ou **Contra IA** com três níveis de dificuldade.
 
 ---
 
 ## 📝 Sobre o Projeto
 
-Este projeto é uma versão clássica do Jogo da Velha, onde dois jogadores podem se alternar para marcar "X" e "O" em um tabuleiro 3x3. O jogo identifica automaticamente o vencedor ou empate e permite reiniciar a partida.
+Este projeto traz uma experiência completa do clássico **Jogo da Velha**:
+
+* Modo **2 Jogadores**: Dois usuários se alternam marcando "X" e "O".
+* Modo **Contra IA**: Jogue contra o computador, escolhendo entre **Fácil, Médio ou Difícil**.
+* O jogo detecta automaticamente **vitória**, **empate** e permite **reiniciar a partida** ou **trocar de nível**.
+
+O design é moderno, responsivo e com **efeitos visuais para hover**, mensagens de vitória e modal de escolha de nível.
 
 ---
 
 ## ⚙️ Tecnologias Utilizadas
 
-* **HTML5** – Estrutura da página e tabuleiro.
-* **CSS3** – Estilização, layout responsivo e efeitos visuais.
-* **JavaScript** – Lógica do jogo, verificação de vitória/empate e interação com o usuário.
+* **HTML5** – Estrutura do tabuleiro, modais e menu.
+* **CSS3** – Estilização do tabuleiro, efeitos de hover, animações e modal responsivo.
+* **JavaScript** – Lógica do jogo, alternância de turnos, IA simples e detecção de vitória/empate.
 
 ---
 
 ## 🖥️ Funcionalidades
 
-* 
-* ✅ Detecta vitória ou empate.
-* 🔄 Permite reiniciar o jogo sem atualizar a página.
-* 📱 Layout simples, intuitivo e responsivo.
+* 🎮 Escolha entre **2 Jogadores** ou **Contra IA**.
+* 🟢 **Detecção de vitória** para X ou O.
+* ⚪ **Detecção de empate**.
+* 🔄 Reinício do jogo sem recarregar a página.
+* 🎚️ Modal para escolha do **nível de dificuldade da IA**.
+* ⬅️ Botão **Voltar ao Menu**.
+* 💻 Layout responsivo e design moderno com **hover interativo**.
+* 🌈 Créditos animados no menu principal.
 
 ---
 
@@ -34,10 +44,21 @@ Este projeto é uma versão clássica do Jogo da Velha, onde dois jogadores pode
 ```
 jogo-da-velha/
 │
-├─ index.html      # Página principal
-├─ style.css       # Estilos do jogo
-├─ script.js       # Lógica do jogo
-└─ README.md       # Documentação
+├─ index.html               # Menu principal com opções de jogo
+├─ style.css                # Estilo geral do menu
+├─ mulish.ts                # Importação de fontes Mulish
+│
+├─ version1/                # Modo 2 Jogadores
+│  ├─ index.html
+│  ├─ style.css
+│  └─ script.js
+│
+├─ version2/                # Modo Contra IA
+│  ├─ index.html
+│  ├─ style.css
+│  └─ script.js
+│
+└─ README.md                # Documentação do projeto
 ```
 
 ---
@@ -46,32 +67,45 @@ jogo-da-velha/
 
 ### Opção 1: Abrir direto no navegador
 
-1. Clique duas vezes no arquivo `index.html`.
-2. O jogo será aberto no seu navegador padrão.
+1. Clique duas vezes no arquivo `index.html` na pasta raiz.
+2. Escolha entre **2 Jogadores** ou **Contra IA**.
+3. O jogo será carregado no seu navegador padrão.
 
-### Opção 2: Usar servidor local (recomendado)
+### Opção 2: Servidor local (recomendado)
 
-* Com **Node.js**:
+Se você tiver **Node.js** instalado:
 
 ```bash
 npx serve
 ```
 
 * Abra `http://localhost:3000` no navegador.
-
-Isso garante que a lógica JavaScript funcione corretamente em todos os navegadores.
+* Isso garante que a lógica JavaScript funcione corretamente em todos os navegadores.
 
 ---
 
 ## 📸 Preview
 
-![Preview do Jogo](link-da-imagem-ou-screenshot)
+### Menu Principal
 
-*(Substitua pelo screenshot do seu jogo)*
+![Menu Principal](link-do-screenshot-menu)
+
+### Modo 2 Jogadores
+
+![Modo 2 Jogadores](link-do-screenshot-2jogadores)
+
+### Modo Contra IA
+
+![Modo Contra IA](link-do-screenshot-ia)
+
+*(Substitua pelos screenshots reais do seu projeto)*
 
 ---
 
 ## 📌 Observações
 
-* Projeto ideal para estudo de **DOM, eventos e lógica de jogo** em JavaScript.
-* Código simples e fácil de expandir com novas funcionalidades, como placar ou IA.
+* Projeto ideal para estudo de **DOM, eventos, lógica de jogo e manipulação de classes** em JavaScript.
+* Fácil de expandir com funcionalidades como **placar**, **timer** ou **nível de IA avançado**.
+* Design reutiliza **fontes Mulish** e mantém **responsividade** em diferentes tamanhos de tela.
+
+---
