@@ -1,6 +1,6 @@
 # 🎮 Jogo da Velha 
 
-![Progresso](https://img.shields.io/badge/progress-50%25-yellow)
+![Em andamento](https://img.shields.io/badge/Status-Em%20andamento-lightgrey)
 
 Um **Jogo da Velha** simples e interativo, desenvolvido com **HTML, CSS e JavaScript**.
 
