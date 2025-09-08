@@ -4,8 +4,6 @@
 
 Um **Jogo da Velha** interativo, desenvolvido com **HTML, CSS e JavaScript**, que oferece duas modalidades de jogo: **2 Jogadores** ou **Contra IA** com três níveis de dificuldade.
 
----
-
 ## 📝 Sobre o Projeto
 
 Este projeto traz uma experiência completa do clássico **Jogo da Velha**:
@@ -16,15 +14,11 @@ Este projeto traz uma experiência completa do clássico **Jogo da Velha**:
 
 O design é moderno, responsivo e com **efeitos visuais para hover**, mensagens de vitória e modal de escolha de nível.
 
----
-
 ## ⚙️ Tecnologias Utilizadas
 
 * **HTML5** – Estrutura do tabuleiro, modais e menu.
 * **CSS3** – Estilização do tabuleiro, efeitos de hover, animações e modal responsivo.
 * **JavaScript** – Lógica do jogo, alternância de turnos, IA simples e detecção de vitória/empate.
-
----
 
 ## 🖥️ Funcionalidades
 
@@ -36,8 +30,6 @@ O design é moderno, responsivo e com **efeitos visuais para hover**, mensagens 
 * ⬅️ Botão **Voltar ao Menu**.
 * 💻 Layout responsivo e design moderno com **hover interativo**.
 * 🌈 Créditos animados no menu principal.
-
----
 
 ## 📂 Estrutura do Projeto
 
@@ -66,8 +58,6 @@ jogo-da-velha/
 └─ README.md                # Documentação do projeto
 ```
 
----
-
 ## 🚀 Como Rodar o Projeto
 
 ### Opção 1: Abrir direto no navegador
@@ -87,13 +77,10 @@ npx serve
 * Abra `http://localhost:3000` no navegador.
 * Isso garante que a lógica JavaScript funcione corretamente em todos os navegadores.
 
----
-
 ## Créditos
 
 Desenvolvido por [Rafaela Pereira Santos](https://github.com/devrafaela) • baseado no tutorial de *Felipe Rocha - Full Stack Club*.
 
----
 
 ## 📸 Preview
 
@@ -109,12 +96,9 @@ Desenvolvido por [Rafaela Pereira Santos](https://github.com/devrafaela) • bas
 
 ![Modo Contra IA](images/jogo-ativo.png)
 
----
 
 ## 📌 Observações
 
 * Projeto ideal para estudo de **DOM, eventos, lógica de jogo e manipulação de classes** em JavaScript.
 * Fácil de expandir com funcionalidades como **placar**, **timer** ou **nível de IA avançado**.
 * Design reutiliza **fontes Mulish** e mantém **responsividade** em diferentes tamanhos de tela.
-
----
