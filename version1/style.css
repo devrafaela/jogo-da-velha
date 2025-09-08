@@ -159,3 +159,19 @@ body {
 .show-winning-message {
   display: flex;
 } 
+
+
+/* Voltar ao menu */
+.back-to-menu {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.2s ease;
+}
+
+.back-to-menu:hover {
+  text-decoration: underline;
+}

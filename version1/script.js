@@ -101,3 +101,9 @@ const handleClick = (e) => {
 
 startGame(); 
 restartButton.addEventListener("click", startGame);
+
+// Botão Voltar ao Menu
+const backToMenuButton = document.getElementById("backToMenu");
+backToMenuButton.addEventListener("click", () => {
+  window.location.href = "../index.html"; // Volta para o menu raiz
+});

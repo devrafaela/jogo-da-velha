@@ -6,9 +6,10 @@ const restartButton = document.querySelector("[data-restart-button]");
 const changeLevelButton = document.querySelector("[data-change-level-button]");
 const levelModal = document.querySelector("[data-level-modal]");
 const levelButtons = levelModal.querySelectorAll("button");
+const backToMenuButton = document.getElementById("backToMenu");
 
-let aiLevel; // nível escolhido pelo usuário
-let isCircleTurn; // false = humano (X), true = IA (O)
+let aiLevel;
+let isCircleTurn;
 
 const winnerCombinations = [
   [0,1,2],[3,4,5],[6,7,8],
@@ -16,9 +17,9 @@ const winnerCombinations = [
   [0,4,8],[2,4,6]
 ];
 
-// Inicializa o jogo
+// Inicializa jogo
 const startGame = () => {
-  if(!aiLevel) return; // não começa sem nível
+  if(!aiLevel) return;
   isCircleTurn = false;
 
   cellElements.forEach(cell => {
@@ -27,40 +28,37 @@ const startGame = () => {
     cell.addEventListener("click", handleClick, { once: true });
   });
 
+  winningMessage.style.display = "none";
+  board.style.display = "grid";
   setBoardHoverClass();
-  winningMessage.style.display = "none"; // esconde a mensagem
-  board.style.display = "grid"; // mostra o tabuleiro
 };
 
-// Exibe mensagem de fim de jogo
+// Fim de jogo
 const endGame = (isDraw) => {
-  winningMessageTextElement.innerText = isDraw ? "Empate!" : (isCircleTurn ? " 'O' venceu! " : " 'X' venceu! ");
-  winningMessage.style.display = "flex"; // garante que a mensagem apareça
+  winningMessageTextElement.innerText = isDraw ? "Empate!" : (isCircleTurn ? "O venceu!" : "X venceu!");
+  winningMessage.style.display = "flex";
 };
 
 // Verifica vitória
-const checkForWin = currentPlayer => 
-  winnerCombinations.some(combination => 
-    combination.every(index => cellElements[index].classList.contains(currentPlayer))
-  );
+const checkForWin = player => 
+  winnerCombinations.some(comb => comb.every(i => cellElements[i].classList.contains(player)));
 
 // Verifica empate
-const checkForDraw = () => 
-  [...cellElements].every(cell => cell.classList.contains("x") || cell.classList.contains("circle"));
+const checkForDraw = () => [...cellElements].every(c => c.classList.contains("x") || c.classList.contains("circle"));
 
 // Marca X ou O
-const placeMark = (cell,classToAdd) => cell.classList.add(classToAdd);
+const placeMark = (cell, mark) => cell.classList.add(mark);
 
 // Atualiza hover
 const setBoardHoverClass = () => {
-  board.classList.remove("circle","x");
+  board.classList.remove("x","circle");
   board.classList.add(isCircleTurn ? "circle" : "x");
 };
 
 // Alterna turno
-const swapTurns = () => { 
-  isCircleTurn = !isCircleTurn; 
-  setBoardHoverClass(); 
+const swapTurns = () => {
+  isCircleTurn = !isCircleTurn;
+  setBoardHoverClass();
 };
 
 // Movimento IA
@@ -69,26 +67,22 @@ const aiMove = () => {
     const emptyCells = [...cellElements].filter(c => !c.classList.contains("x") && !c.classList.contains("circle"));
     if(emptyCells.length === 0) return;
 
-    let chosenCell;
-    if(aiLevel === "easy") chosenCell = emptyCells[Math.floor(Math.random()*emptyCells.length)];
-    else if(aiLevel === "medium") chosenCell = emptyCells[Math.floor(Math.random()*emptyCells.length)];
-    else chosenCell = emptyCells[Math.floor(Math.random()*emptyCells.length)];
-
-    placeMark(chosenCell,"circle");
+    const chosenCell = emptyCells[Math.floor(Math.random()*emptyCells.length)];
+    placeMark(chosenCell, "circle");
 
     if(checkForWin("circle")) endGame(false);
     else if(checkForDraw()) endGame(true);
     else swapTurns();
-  },500);
+  }, 500);
 };
 
 // Clique humano
 const handleClick = e => {
   const cell = e.target;
-  const classToAdd = isCircleTurn ? "circle":"x";
-  placeMark(cell,classToAdd);
+  const mark = isCircleTurn ? "circle":"x";
+  placeMark(cell, mark);
 
-  if(checkForWin(classToAdd)) endGame(false);
+  if(checkForWin(mark)) endGame(false);
   else if(checkForDraw()) endGame(true);
   else { swapTurns(); if(isCircleTurn) aiMove(); }
 };
@@ -96,22 +90,26 @@ const handleClick = e => {
 // Botões
 restartButton.addEventListener("click", startGame);
 
-changeLevelButton.addEventListener("click", () => {
-  board.style.display = "none";
+changeLevelButton.addEventListener("click", ()=>{
   winningMessage.style.display = "none";
+  board.style.display = "none";
   levelModal.style.display = "flex";
 });
 
 // Escolha do nível
-levelButtons.forEach(btn => btn.addEventListener("click", () => {
+levelButtons.forEach(btn => btn.addEventListener("click", ()=>{
   aiLevel = btn.dataset.level;
   levelModal.style.display = "none";
   startGame();
 }));
 
-// Ao carregar a página
-window.addEventListener("load", () => {
+// Ao carregar página
+window.addEventListener("load", ()=>{
   levelModal.style.display = "flex";
   board.style.display = "none";
-  winningMessage.style.display = "none";
+});
+
+// Clicar em voltar ao menu
+backToMenuButton.addEventListener("click", () => {
+  window.location.href = "../index.html"; // volta para o menu
 });
