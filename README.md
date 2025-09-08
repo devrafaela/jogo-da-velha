@@ -58,6 +58,11 @@ jogo-da-velha/
 │  ├─ style.css
 │  └─ script.js
 │
+├─ images/                  # Imagens do projeto
+│  ├─ escolha-nivel.png
+│  ├─ jogo-ativo.png
+│  └─ escolha-nivel.png
+│
 └─ README.md                # Documentação do projeto
 ```
 
@@ -88,17 +93,15 @@ npx serve
 
 ### Menu Principal
 
-![Menu Principal](link-do-screenshot-menu)
+![Menu Principal](images/menu-principal.png)
 
-### Modo 2 Jogadores
+### Modo Escolha de Nível
 
-![Modo 2 Jogadores](link-do-screenshot-2jogadores)
+![Modo 2 Jogadores](images/escolha-nivel.png)
 
-### Modo Contra IA
+### Modo Jogo em Andamento
 
-![Modo Contra IA](link-do-screenshot-ia)
-
-*(Substitua pelos screenshots reais do seu projeto)*
+![Modo Contra IA](images\jogo-ativo.png)
 
 ---
 
